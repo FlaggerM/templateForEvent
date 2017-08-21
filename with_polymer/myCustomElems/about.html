@@ -1,0 +1,58 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<dom-module id="about-section">
+<style>
+h1{
+	margin: 30px 0px;
+}
+div{
+    margin-bottom: 15px;
+}
+img{
+	max-width: 100%;
+}
+#about span{
+    border:solid black 3px;
+    padding: 2px 10px;
+}
+
+</style>
+
+<template>
+    <h1 id="about" class="w3-center w3-padding-24"> 
+        <span>
+            ABOUT
+        </span>
+    </h1>
+	<div class="w3-container">
+			<div class="w3-row-padding">
+				<div class="w3-col m5">
+					<img src="{{imgUrl}}" alt="1">
+				</div>
+				<div class="w3-col m7">
+				<p class="w3-animate-opacity">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quot homines, tot sententiae; Scrupulum, inquam, abeunti; Sint ista Graecorum; Quae sunt igitur communia vobis cum antiquis, iis sic utamur quasi concessis; Nam et complectitur verbis, quod vult, et dicit plane, quod intellegam; Duo Reges: constructio interrete. Teneo, inquit, finem illi videri nihil dolere. Primum in nostrane potestate est, quid meminerimus? Quid est, quod ab ea absolvi et perfici debeat?</p>
+				</div>
+			</div>
+		</div>
+</template>
+
+<script>
+    Polymer({
+        is: "about-section",
+        properties:{
+        	description: String,
+            imgUrl:{
+            	type: String,
+            	value: "http://placehold.it/1920x1080"
+            },
+            altImg:{
+            	type:String,
+            	value: "alt img"
+            }
+        }
+
+    });
+</script>
+
+</dom-module>

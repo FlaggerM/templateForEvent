@@ -1,0 +1,41 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+<!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+
+<dom-module id="pricing-paragraph">
+<style>
+.pricing{
+	margin: 30px 0px;
+}
+</style>
+
+<template>
+    <div class="w3-card-4">
+
+		<header class="w3-container">
+		  <h1>{{type}}</h1>
+		</header>
+
+		<div class="w3-container w3-center">
+		  <p>{{description}}</p>
+		</div>
+
+		<footer class="w3-container">
+		  <h3>{{price}}$</h3>
+		</footer>
+
+	</div>
+</template>
+
+<script>
+    Polymer({
+        is: "pricing-paragraph",
+        properties:{
+            type: String,
+            description: String,
+            price: String
+        }
+
+    });
+</script>
+
+</dom-module>

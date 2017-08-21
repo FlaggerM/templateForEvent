@@ -1,0 +1,104 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+<!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+
+<dom-module id="showcase-section">
+<style>
+    .bg-img{
+    background: url('../bg.jpg') no-repeat;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: 50% 50%;
+    position: fixed;
+    filter: brightness(50%);
+    }
+
+    .showcase{
+
+        z-index: 1;
+        padding: 140px 100px;
+        color: black;
+        height: 1000px;
+        color: white;
+    }
+
+    .showcase h1{
+        font-size: 40px;
+        font-weight: 600;
+    }
+
+    .showcase hr{
+        width: 100px;
+        margin: auto;
+        border-width: 3px;
+        border-color: #f44336;
+    }
+
+    .showcase p{
+        font-size: 16;
+        padding-bottom: 20px;
+        color:white;
+    }
+
+    .address{
+        font-size: 18px;
+        margin: 100px;
+    }
+
+    @media only screen and (max-width: 600px){
+        :host{
+            margin-top: 190px;
+        }
+        .showcase{
+            margin-top: 190px;
+            height: 450px;
+            padding: 20px 0;
+        }
+    }
+</style>
+
+<template>
+    <section id="showcase" class="showcase">
+        <div class="bg-img"></div>
+            <div class="w3-container w3-center">
+                <h1 class="w3-animate-opacity">{{eventName}}</h1>
+                <hr>
+                <p class="w3-animate-opacity">{{description}}</p>
+
+                <button onclick="document.getElementById('start-modal').style.display='block'" class="w3-button w3-red w3-large w3-border w3-border-red w3-opacity">Register</button>
+
+                <p class="address w3-center w3-animate-opacity w3-border w3-border-white w3-padding w3-hide-small">{{dateAddress}}</p>
+
+            </div>
+    </section>
+</template>
+
+<script>
+    Polymer({
+        is: "showcase-section",
+        properties:{
+            dateAddress:{
+                type: String,
+                value: "20TH OF JUNE 2017 - Grand Dr, Centennial Park NSW 2021, AU"
+            },
+            description:{
+                type: String,
+                value: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quot homines, tot sententiae; Scrupulum, inquam, abeunti; Sint ista Graecorum; Quae sunt igitur communia vobis cum antiquis, iis sic utamur quasi concessis; Nam et complectitur verbis, quod vult, et dicit plane, quod intellegam; Duo Reges: constructio interrete. Teneo, inquit, finem illi videri nihil dolere."
+            },
+            eventName:{
+                type: String,
+                value: "Amazing place for your event"
+            },
+            bgUrl:{
+                type: String,
+                value: "bg.jpg"
+            }
+        }
+
+    });
+</script>
+
+</dom-module>

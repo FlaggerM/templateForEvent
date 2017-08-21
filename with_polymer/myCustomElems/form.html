@@ -1,0 +1,29 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+<!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+
+<dom-module id="registration-form">
+<style>
+    
+</style>
+
+<template>
+    <form is="ajax-form" action="{{url}}" method="post" class="w3-container w3-padding-large w3-dark-grey modalForm">
+        <input class="w3-input w3-border w3-round-large w3-margin-bottom w3-margin-top" type="text" placeholder="Email">
+        <input class="w3-input w3-border w3-round-large w3-margin-bottom" type="text" placeholder="First Name">
+        <input class="w3-input w3-border w3-round-large w3-margin-bottom" type="text" placeholder="Last Name">
+        <input class="w3-input w3-border w3-round-large w3-margin-bottom" type="password" placeholder="Password">
+        <button type="submit" class="w3-button w3-border w3-right w3-round w3-margin-bottom">Submit</button>
+    </form>
+</template>
+
+<script>
+    Polymer({
+        is: "registration-form",
+        properties:{
+            url: String
+        }
+
+    });
+</script>
+
+</dom-module>

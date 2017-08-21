@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="/bower_components/webcomponentsjs/webcomponents.js"></script>
+        <!-- <script src="/bower_components/jquery/dist/jquery.js"></script> -->
+        <link rel="import" href="/bower_components/polymer/polymer.html">
+        <link rel="import" href="/bower_components/google-map/google-map.html">
+        <link rel="import" href="/myCustomElems/form.html">
+        <link rel="import" href="/myCustomElems/pricing-paragraph.html">
+        <link rel="import" href="/myCustomElems/about.html">
+        <link rel="import" href="/myCustomElems/showcase.html">
+        <link rel="import" href="/myCustomElems/sign-up.html">
+        <link rel="import" href="/myCustomElems/registration-modal.html">
+
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js"></script>
+    </head>
+    <body class="w3-light-grey">
+
+    <!-- NAVBAR -->
+		<div class="w3-bar w3-grey w3-top">
+			<span class="w3-bar-item w3-mobile">
+				<img src="http://placehold.it/150x30">
+			</span>
+			<span class="w3-right w3-mobile">
+				<a href="#" class="w3-bar-item w3-button w3-hide-small">Login</a>
+				<a href="#showcase" class="w3-bar-item w3-button">Home</a>
+				<a href="#about" class="w3-bar-item w3-button w3-hide-small">About</a>
+				<a href="#pricing" class="w3-bar-item w3-button w3-hide-small">Pricing</a>
+				<a href="#sign_up_form" class="w3-bar-item w3-button w3-hide-small">Sign Up</a>
+				<a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="mobileNavbar()">&#9776;</a>
+			</span>
+			<span id="mobNavbar" class="w3-bar-block w3-hide w3-hide-large w3-hide-medium">
+				<a href="#" class="w3-bar-item w3-button">Login</a>
+				<a href="#about" class="w3-bar-item w3-button">About</a>
+				<a href="#pricing" class="w3-bar-item w3-button">Pricing</a>
+				<a href="#sign_up_form" class="w3-bar-item w3-button">Sign Up</a>
+			</span>
+		</div>
+
+	<!-- SHOWCASE -->
+		<showcase-section
+			date-address="20TH OF JUNE 2017 - Grand Dr, Centennial Park NSW 2021, AU"
+			description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quot homines, tot sententiae; Scrupulum, inquam, abeunti; Sint ista Graecorum; Quae sunt igitur communia vobis cum antiquis, iis sic utamur quasi concessis; Nam et complectitur verbis, quod vult, et dicit plane, quod intellegam; Duo Reges: constructio interrete. Teneo, inquit, finem illi videri nihil dolere."
+			event-name="Amazing place for your event">
+		</showcase-section>
+
+	<!-- ABOUT -->
+		<section class="section">
+			<section  class="about section">
+				<about-section 
+					img-url="http://placehold.it/1920x1080"
+					alt-img="alt"
+					description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quot homines, tot sententiae; Scrupulum, inquam, abeunti; Sint ista Graecorum; Quae sunt igitur communia vobis cum antiquis, iis sic utamur quasi concessis; Nam et complectitur verbis, quod vult, et dicit plane, quod intellegam; Duo Reges: constructio interrete. Teneo, inquit, finem illi videri nihil dolere. Primum in nostrane potestate est, quid meminerimus? Quid est, quod ab ea absolvi et perfici debeat?">
+				</about-section>
+			</section>
+
+		<!-- PRICING -->
+			<h1 id="pricing" class="w3-center w3-dark-grey w3-padding-32">
+				<span>
+					PRICING
+				</span>
+			</h1>
+			<section  class="pricing section">
+				<div class="w3-container w3-padding-24">
+					<div class="w3-row-padding w3-center">
+						<div class="w3-col m4">
+							<pricing-paragraph 
+									type="Standart"
+									description="Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+									price="30"
+							></pricing-paragraph>
+						</div>
+						<div class="w3-col m4">
+							<pricing-paragraph 
+									type="Pro"
+									description="Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+									price="65"
+							></pricing-paragraph>
+						</div>
+						<div class="w3-col m4">
+							<pricing-paragraph 
+									type="VIP"
+									description="Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+									price="100"
+							></pricing-paragraph>
+						</div>
+					</div>
+				</div>
+			</section>
+
+
+		<!-- SIGN UP FORM WITH MAP -->
+			<section id="sign_up_form" class="section form">
+				<div class="w3-container w3-padding-24">
+					<sing-up url="your/url"></sing-up>
+					<div id='map' class="w3-card-4 w3-half w3-hide-small">
+						<google-map 
+							latitude="-33.9005227" 
+							longitude="151.2301086" 
+							api-key="AIzaSyDMFLdOv4ppHqqHKPrttJC9WTghNvSRgNM" 
+							zoom="15" >
+					        <google-map-marker 
+						        latitude="-33.9005227" 
+						        longitude="151.2301086" 
+						        title="event">
+					        </google-map-marker>
+					    </google-map>
+					</div>
+				</div>
+			</section>
+
+			<footer class="w3-grey w3-padding-large w3-center">
+				<p>{{Company Name}} &copy; 2017</p>
+			</footer>
+			
+		<!-- MODAL -->
+			<registration-modal url="your/url"></registration-modal>
+
+		</section>
+    </body>
+</html>

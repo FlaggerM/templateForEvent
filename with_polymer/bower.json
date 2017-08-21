@@ -1,0 +1,23 @@
+{
+  "name": "w_poly",
+  "authors": [
+    "Andrew S <9.flager@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "private": false,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.9.1",
+    "google-map": "GoogleWebComponents/google-map#^1.2.0",
+    "ajax-form": "^2.1.4"
+  }
+}

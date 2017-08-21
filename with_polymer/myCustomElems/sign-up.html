@@ -1,0 +1,44 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+<!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+<link rel="import" href="/myCustomElems/form.html">
+
+<dom-module id="sing-up">
+<style>
+.address{
+	font-size: 18px;
+	margin: 100px;
+}
+</style>
+
+<template>
+		<div class="w3-card-4 w3-half">
+			<div class="w3-container w3-center w3-dark-grey">
+				<h3>Sign Up</h3>
+			</div>
+			<registration-form url="{{url}}">
+			</registration-form>
+		</div>
+		<div class="w3-card-4 w3-text-shadow w3-half w3-hide-medium w3-hide-large">
+			<div class="container address">
+				<p>There must be a map but u r on a mobile device, so here is the address:
+				<br>
+					{{address}}
+				</p>
+			</div>
+		</div>
+</section>
+</template>
+
+<script>
+    Polymer({
+        is: "sing-up",
+        properties:{
+            url: String,
+            address:{
+            	type: String,
+            	value: "Grand Dr, Centennial Park NSW 2021, AU"
+            }
+        }
+    });
+</script>
+</dom-module>

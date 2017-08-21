@@ -1,0 +1,36 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+<!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+<link rel="import" href="/myCustomElems/form.html">
+
+<dom-module id="registration-modal">
+<style>
+
+</style>
+
+<template>
+	<div id="start-modal" class="w3-modal">
+		<div class="w3-modal-content w3-animate-top w3-dark-grey">
+			<header class="w3-container w3-dark-grey">
+				<span class="w3-button w3-xlarge w3-hover-red w3-display-topright" title="Close" onclick="document.getElementById('start-modal').style.display='none'">&times;</span>
+				<h2>Register</h2>
+			</header>
+
+			<div class="w3-container">
+				<registration-form url="{{url}}">
+				</registration-form>
+			</div>
+
+		</div>
+	</div>
+
+</template>
+
+<script>
+    Polymer({
+        is: "registration-modal",
+        properties:{
+            url: String
+        }
+    });
+</script>
+</dom-module>

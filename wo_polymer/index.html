@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+
+<!-- The goal of this exercise is to create a single root page website for an event ( meet-up, conference, …). The page should include at least a section with the event information and a section to register for the event. The event information section should include the basic information about the event (date, time, location, …). The registration section should allow a visitor of the webpage to register for the event. A registration requires at least an e-mail address, a name and a password, to log into the event private page (which is out of scope for this exercise). The registration form data should be submitted to a backend system of your choice through a RESTful API. 
+Submission details ● Submit by 29-04-2017 end of day (23:59) by email to ​pieter.vincken@agilians.com ● Zip folder should contain ○ Sources (can be 1 file) ■ JS ■ CSS ■ HTML ○ Readme describing workings and dependencies ○ Any additional build or dependency files ■ bower.json for example
+ -->
+
+<head>
+<!-- https://www.polymer-project.org/2.0/start/toolbox/set-up -->
+<!-- http://stackoverflow.com/questions/20916517/how-do-i-process-forms-front-and-back-end-on-the-same-page -->
+<!-- http://demo.web3canvas.com/themeforest/gather/index-parallax.html -->
+<!-- http://preview.themeforest.net/item/eventme-responsive-event-landing-page/full_screen_preview/7437582 -->
+<!-- https://eve-event.herokuapp.com/ -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
+    <title>Event Name</title>
+    <!-- LIBS -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+	<!-- ADITIONAL FILES -->
+	<link rel="stylesheet" href="style.css">
+	<script type="text/javascript" src="script.js"></script>
+</head>
+<body class="w3-light-grey">
+
+    <!-- NAVBAR -->
+   <!--  <div class="w3-top"> -->
+		<div class="w3-bar w3-grey w3-top">
+			<span class="w3-bar-item w3-mobile"><img src="http://placehold.it/150x30"></span>
+			<span class="w3-right w3-mobile">
+				<a href="#" class="w3-bar-item w3-button w3-hide-small">Login</a>
+				<a href="#showcase" class="w3-bar-item w3-button">Home</a>
+				<a href="#about" class="w3-bar-item w3-button w3-hide-small">About</a>
+				<a href="#pricing" class="w3-bar-item w3-button w3-hide-small">Pricing</a>
+				<a href="#sign_up_form" class="w3-bar-item w3-button w3-hide-small">Sign Up</a>
+				<a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="mobileNavbar()">&#9776;</a>
+			</span>
+			<span id="mobNavbar" class="w3-bar-block w3-hide w3-hide-large w3-hide-medium">
+				<a href="#" class="w3-bar-item w3-button">Login</a>
+				<!-- <a href="#showcase" class="w3-bar-item w3-button">Home</a> -->
+				<a href="#about" class="w3-bar-item w3-button">About</a>
+				<a href="#pricing" class="w3-bar-item w3-button">Pricing</a>
+				<a href="#sign_up_form" class="w3-bar-item w3-button">Sign Up</a>
+			</span>
+		</div>
+	<!-- </div> -->
+
+
+	<!-- SHOWCASE -->
+	<section id="showcase" class="showcase">
+	<div class="bg-img"></div>
+		<div class="w3-container w3-center">
+			<h1 class="w3-animate-opacity">Amazing place for your event</h1>
+			<hr>
+			<p class="w3-animate-opacity">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quot homines, tot sententiae; Scrupulum, inquam, abeunti; Sint ista Graecorum; Quae sunt igitur communia vobis cum antiquis, iis sic utamur quasi concessis; Nam et complectitur verbis, quod vult, et dicit plane, quod intellegam; Duo Reges: constructio interrete. Teneo, inquit, finem illi videri nihil dolere.</p>
+
+			<button onclick="document.getElementById('start-modal').style.display='block'" class="w3-button w3-red w3-large w3-border w3-border-red w3-opacity">Register</button>
+
+			<p class="address w3-center w3-border w3-border-white w3-padding w3-hide-small">20TH OF JUNE 2017 - Grand Dr, Centennial Park NSW 2021, AU</p>
+
+		</div>
+	</section>
+	
+<section class="section">
+	<!-- ABOUT -->
+	<section  class="about section">
+		<h1 id="about" class="w3-center w3-padding-24"> 
+			<span>
+				ABOUT
+			</span>
+		</h1>
+		<div class="w3-container">
+			<div class="w3-row-padding">
+				<div class="w3-col m5">
+					<img src="http://placehold.it/1920x1080" alt="1">
+				</div>
+				<div class="w3-col m7">
+				<p class="w3-animate-opacity">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quot homines, tot sententiae; Scrupulum, inquam, abeunti; Sint ista Graecorum; Quae sunt igitur communia vobis cum antiquis, iis sic utamur quasi concessis; Nam et complectitur verbis, quod vult, et dicit plane, quod intellegam; Duo Reges: constructio interrete. Teneo, inquit, finem illi videri nihil dolere. Primum in nostrane potestate est, quid meminerimus? Quid est, quod ab ea absolvi et perfici debeat?</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<!-- PRICING -->
+	<section  class="pricing section">
+		<h1 id="pricing" class="w3-center w3-dark-grey w3-padding-32">
+			<span>
+				PRICING
+			</span>
+		</h1>
+		<div class="w3-container w3-padding-24">
+			<div class="w3-row-padding w3-center">
+				<div class="w3-col m4">
+					<div class="w3-card-4">
+
+						<header class="w3-container">
+						  <h1>Standart</h1>
+						</header>
+
+						<div class="w3-container w3-center">
+						  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+						</div>
+
+						<footer class="w3-container">
+						  <h3>30$</h3>
+						</footer>
+
+					</div>
+				</div>
+				<div class="w3-col m4">
+					<div class="w3-card-4">
+
+						<header class="w3-container">
+						  <h1>Pro</h1>
+						</header>
+
+						<div class="w3-container w3-center">
+						  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+						</div>
+
+						<footer class="w3-container">
+						  <h3>65$</h3>
+						</footer>
+
+					</div>
+				</div>
+				<div class="w3-col m4">
+					<div class="w3-card-4">
+
+						<header class="w3-container">
+						  <h1>VIP</h1>
+						</header>
+
+						<div class="w3-container w3-center">
+						  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+						</div>
+
+						<footer class="w3-container">
+						  <h3>100$</h3>
+						</footer>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+
+	<!-- SIGN UP FORM -->
+	<!-- <h1 class="w3-center"> Sign Up</h1> -->
+	<section id="sign_up_form" class="section form">
+		<div class="w3-container w3-padding-24">
+			<div class="w3-card-4 w3-half">
+				<div class="w3-container w3-center w3-dark-grey">
+					<h3>Sign Up</h3>
+				</div>
+				<form class="w3-container w3-padding-large w3-dark-grey mainForm">
+					<input class="w3-input w3-border w3-round-large" type="text" name="email" placeholder="Email">
+					<br>
+					<input class="w3-input w3-border w3-round-large" type="text" name="firstName" placeholder="First Name">
+					<br>
+					<input class="w3-input w3-border w3-round-large" type="text" name="lastName" placeholder="Last Name">
+					<br>
+					<input class="w3-input w3-border w3-round-large" type="password" name="password" placeholder="Password">
+					<br>
+					<button type="submit" class="w3-button w3-border w3-right w3-round">Register</button>
+				</form>
+			</div>
+			<!-- LOCATION(WITH MAP) -->
+			<div id='map' class="w3-card-4 w3-half w3-hide-small">
+			</div>
+			<div class="w3-card-4 w3-text-shadow w3-half w3-hide-medium  w3-hide-large">
+				<div class="container address">
+					<p>There must be a map but u r on a mobile device, so here is the address:<br>
+					Grand Dr, Centennial Park NSW 2021, AU	
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+</section>
+	
+	<footer class="w3-grey w3-padding-large w3-center">
+		<p>{{Company Name}} &copy; 2017</p>
+	</footer>
+
+
+
+
+	<!-- MODAL -->
+	<div id="start-modal" class="w3-modal">
+		<div class="w3-modal-content w3-animate-top">
+			<header class="w3-container w3-dark-grey">
+				<span class="w3-button w3-xlarge w3-hover-red w3-display-topright" title="Close" onclick="document.getElementById('start-modal').style.display='none'">&times;</span>
+				<h2>Register</h2>
+			</header>
+
+			<div class="w3-container">
+				<form class="modalForm">
+					<input class="w3-input w3-border w3-round-large w3-margin-bottom w3-margin-top" type="text" placeholder="Email">
+					<input class="w3-input w3-border w3-round-large w3-margin-bottom" type="text" placeholder="First Name">
+					<input class="w3-input w3-border w3-round-large w3-margin-bottom" type="text" placeholder="Last Name">
+					<input class="w3-input w3-border w3-round-large w3-margin-bottom" type="password" placeholder="Password">
+					<button id="btn2" type="submit" class="w3-button w3-border w3-right w3-round w3-margin-bottom">Submit</button>
+				</form>
+			</div>
+
+		</div>
+	</div>
+</body>
+</html>

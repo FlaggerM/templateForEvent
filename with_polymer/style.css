@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+body{
+	font-family: Quicksand, sans-serif;
+}
+
+.section{
+	background-color:white;
+}
+/*http://placehold.it/2500x1500*/
+
+#pricing span{
+	border:solid white 3px;
+	padding: 2px 10px;
+}
+
+#map{
+	height: 375px;
+}

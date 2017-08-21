@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+body{
+	font-family: Quicksand, sans-serif;
+}
+
+.section{
+	background-color:white;
+}
+/*http://placehold.it/2500x1500*/
+.bg-img{
+	background: url('bg.jpg') no-repeat;
+	z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: 50% 50%;
+    position: fixed;
+    filter: brightness(50%);
+}
+
+.showcase{
+
+	z-index: 1;
+	padding: 140px 100px;
+	color: black;
+	height: 1000px;
+	color: white;
+}
+
+.showcase h1{
+	font-size: 40px;
+	font-weight: 600;
+}
+
+.showcase hr{
+	width: 100px;
+	margin: auto;
+	border-width: 3px;
+	border-color: #f44336;
+}
+
+.showcase p{
+	font-size: 16;
+	padding-bottom: 20px;
+	color:white;
+}
+
+.about, .pricing{
+	margin: 30px 0px;
+}
+
+.about img{
+	max-width: 100%;
+}
+
+#about span{
+	border:solid black 3px;
+	padding: 2px 10px;
+}
+
+#pricing span{
+	border:solid white 3px;
+	padding: 2px 10px;
+}
+
+#map{
+	height: 368px;
+}
+
+.address{
+	font-size: 18px;
+	margin: 100px;
+}
+
+@media only screen and (max-width: 600px){
+	body{
+		margin-top: 190px;
+	}
+	.showcase{
+		height: 450px;
+		padding: 20px 0;
+	}
+}
